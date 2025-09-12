@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Hacked by whanx708</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Electrolize|Iceberg" rel="stylesheet">
+  <style>
+    /* Full-viewport layout so page always covers screen */
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow: hidden; /* cegah scroll sehingga kelihatan "fullscreen" */
+    }
+
+    /* background image full cover (sebagai fallback jika fullscreen gagal) */
+    .bg {
+      position: fixed;
+      inset: 0;
+      background: url('https://d.top4top.io/p_35425d3be0.jpeg') center/cover no-repeat;
+      z-index: 0;
+      filter: none;
+    }
+
+    /* kontainer konten di tengah */
+    #container {
+      position: relative;
+      z-index: 2;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      font-family: 'Iceberg', sans-serif;
+      margin: 0.2rem 0;
+      line-height: 1;
+    }
+
+    .message {
+      max-width: 900px;
+      margin: 1rem auto;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    audio {
+      margin-top: 12px;
+      max-width: 300px;
+      width: 100%;
+      display: block;
+    }
+
+    marquee { color: white; display:inline-block; }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      display: none; /* tampilkan ketika fullscreen gagal */
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.6);
+      z-index: 5;
+      color: #fff;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .fs-btn {
+      background: #111;
+      border: 2px solid #fff;
+      padding: .8rem 1.2rem;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 8px;
+    }
+
+    @media (max-width:600px){
+      h1{font-size:2rem}
+    }
+
+    /* paksa pointer cursor custom (optional) */
+    body, a:hover { cursor: url(http://cur.cursors-4u.net/games/gam-13/gam1229.png), progress !important; }
+  </style>
+</head>
+<body oncontextmenu="return false">
+
+  <!-- background cover (fallback) -->
+  <div class="bg" aria-hidden="true"></div>
+
+  <!-- konten -->
+  <div id="container">
+    <h1>Hacked by whanx708</h1>
+
+    <div class="message">
+      suatu saat kamu akan mengingatku entah sebagai orang bodoh yang berhasil kamu tipu, atau orang tulus yang pernah kamu sia sia kan.
+      <p>Greetz</p>
+      <p>D.whanx708  —  R.yhanz708  —  Doni  —  Alam  —  SISIL708  —  Niara708  — ALVIAN708  — AmeliaSc708</p>
+    </div>
+
+    <div>
+      <span style="color:green; font-size:16px">[ </span>
+      <span style="color:white; font-size:16px">[!] ./Fuck youu./ [!]</span>
+      <span style="color:green; font-size:16px"> ]</span>
+    </div>
+
+    <audio controls autoplay loop>
+      <source src="https://f.top4top.io/m_3542adnuo0.mp3" type="audio/mpeg">
+      Browser kamu tidak mendukung audio.
+    </audio>
+
+    <div style="margin-top:12px; color:white; font-size:18px;">
+      __________<span style="color:red">__________</span>__________
+    </div>
+
+    <div style="margin-top:8px;">
+      <marquee width="45%" behavior="alternate" scrollamount="5">
+        <span style="color:lime; font-size:18px">[\\FuckYouu\\]</span>
+      </marquee>
+    </div>
+
+    <div style="color:white; margin-top:16px;">BLACKMAMBAH708  — Indonesia Hacker Rulez</div>
+  </div>
+
+  <!-- overlay kalau fullscreen otomatis diblokir -->
+  <div id="overlay" class="overlay">
+    <div style="text-align:center">
+      <div style="font-size:1.2rem; margin-bottom:.5rem">Browser memblokir fullscreen otomatis.</div>
+      <button id="enterFs" class="fs-btn">Tap untuk masuk Fullscreen</button>
+    </div>
+  </div>
+
+  <script>
+    // Fungsi untuk mencoba masuk fullscreen
+    async function tryEnterFullscreen() {
+      const el = document.documentElement;
+      if (el.requestFullscreen) {
+        try {
+          await el.requestFullscreen();
+          // berhasil -> sembunyikan overlay kalau ada
+          document.getElementById('overlay').style.display = 'none';
+          return true;
+        } catch (err) {
+          return false;
+        }
+      } else if (el.webkitRequestFullscreen) { // Safari old
+        try {
+          el.webkitRequestFullscreen();
+          document.getElementById('overlay').style.display = 'none';
+          return true;
+        } catch (err) {
+          return false;
+        }
+      }
+      return false;
+    }
+
+    // Coba otomatis saat halaman load (banyak browser akan tolak)
+    window.addEventListener('load', async () => {
+      const ok = await tryEnterFullscreen();
+      if (!ok) {
+        // tampilkan overlay instruksi agar user tap/klik
+        const ov = document.getElementById('overlay');
+        ov.style.display = 'flex';
+      }
+    });
+
+    // tombol manual enter fullscreen (user gesture)
+    document.getElementById('enterFs').addEventListener('click', async () => {
+      await tryEnterFullscreen();
+      document.getElementById('overlay').style.display = 'none';
+    });
+
+    // optional: cegah beberapa interaksi keyboard / klik kanan
+    document.addEventListener('contextmenu', e => e.preventDefault());
+  </script>
+</body>
+</html>
