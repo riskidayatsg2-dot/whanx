@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link href="https://fonts.googleapis.com/css?family=Arvo|Electrolize|Iceberg" rel="stylesheet">
   <style>
-    /* Full-viewport layout so page always covers screen */
+    
     html, body {
       height: 100%;
       width: 100%;
@@ -16,10 +16,10 @@
       font-family: 'Courier New', monospace;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      overflow: hidden; /* cegah scroll sehingga kelihatan "fullscreen" */
+      overflow: hidden;
     }
 
-    /* background image full cover (sebagai fallback jika fullscreen gagal) */
+    
     .bg {
       position: fixed;
       inset: 0;
@@ -28,7 +28,7 @@
       filter: none;
     }
 
-    /* kontainer konten di tengah */
+ 
     #container {
       position: relative;
       z-index: 2;
@@ -69,7 +69,7 @@
     .overlay {
       position: fixed;
       inset: 0;
-      display: none; /* tampilkan ketika fullscreen gagal */
+      display: none; 
       align-items: center;
       justify-content: center;
       background: rgba(0,0,0,0.6);
@@ -92,16 +92,14 @@
       h1{font-size:2rem}
     }
 
-    /* paksa pointer cursor custom (optional) */
+    
     body, a:hover { cursor: url(http://cur.cursors-4u.net/games/gam-13/gam1229.png), progress !important; }
   </style>
 </head>
 <body oncontextmenu="return false">
-
-  <!-- background cover (fallback) -->
   <div class="bg" aria-hidden="true"></div>
 
-  <!-- konten -->
+  
   <div id="container">
     <h1>Hacked by whanx708</h1>
 
@@ -112,7 +110,7 @@
     </div>
 
     <div>
-      <span style="color:green; font-size:16px">[ </span>
+      <span style="colorgreen; font-size:16px">[ </span>
       <span style="color:white; font-size:16px">[!] ./Fuck youu./ [!]</span>
       <span style="color:green; font-size:16px"> ]</span>
     </div>
